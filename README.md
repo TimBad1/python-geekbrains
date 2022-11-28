@@ -1,1 +1,1 @@
-# python-geekbrains
+# Типы данных
