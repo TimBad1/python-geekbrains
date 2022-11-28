@@ -8,7 +8,4 @@ n = int(input("Введите число: "))
 print(f'Ваше число = {n}')
 
 arr = input("Введите предложение: ").split()
-print("В вашем предложении {len} слов, "
-    "первое слово {first}, "
-    "а последнее {last}"
-    .format(len = len(arr), first = arr[0], last = arr[len(arr) - 1]))
+print(f"В вашем предложении {len(arr)} слов, первое слово {arr[0]}, а последнее {arr[len(arr) - 1]}")
