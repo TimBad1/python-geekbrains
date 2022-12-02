@@ -12,8 +12,8 @@ def int_func(string):
     """
     Меняет в каждом слове первую букву на заглавную
     """
-    return string.split()
+    return string.title()
 
-res = int_func("Введите строку: ")
+res = int_func(input("Введите строку: "))
 
 print(res)
