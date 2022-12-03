@@ -9,6 +9,10 @@
 
 lst = [300, 2, 12, 44, 1, 1, 4, 10, 7, 1, 78, 123, 55]
 
-# new_lst =[el[] > el for el in enumerate(lst[1:])]
+new_lst = [lst[i] for i in range(1, len(lst)) if lst[i] > lst[i - 1]]
 
-# print(new_lst)
+# for i in range(1, len(lst)):
+#     if lst[i] > lst[i - 1]:
+#         new_lst.append(lst[i])
+
+print(new_lst)
