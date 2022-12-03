@@ -4,17 +4,26 @@
 обработку ситуации деления на ноль.
 """
 
-def my_div(arg_1, arg_2):
+def my_div():
     """
     нахожнение частного от деления
     """
-    if arg_2 == 0:
-        print("На ноль делить нельзя")
-        r = (input("Хотите повторить ввод данных? введите да: "))
-        # if r.lower() == 'да':
-        #     return my_div(int(input("Введите делимое: ")), int(input("Введите делитель: ")))
-        # return 0
-        return my_div(int(input("Введите делимое: ")), int(input("Введите делитель: "))) if r.lower() == 'да' else None
-    return arg_1 / arg_2
+    try:
+        dividend = int(input("Введите делимое: "))
+        divider = int(input("Введите делитель: "))
+        print(dividend / divider)
 
-print(my_div(int(input("Введите делимое: ")), int(input("Введите делитель: "))))
+    except ValueError:
+        print("Вы ввели некорректные данные")
+        r = (input("Хотите повторить ввод данных? введите да: "))
+        if r.lower() == 'да':
+            return my_div()
+        return
+    except ZeroDivisionError:
+        print("На ноль делить нельзя, это даже дети знают, но мы можем повторить запрос")
+        r = (input("Хотите повторить ввод данных? введите да: "))
+        if r.lower() == 'да':
+            return my_div()
+        return
+
+my_div()
