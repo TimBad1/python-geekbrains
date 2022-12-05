@@ -1,18 +1,8 @@
-"""
-Реализовать скрипт, в котором должна быть предусмотрена функция расчета
-заработной платы сотрудника. В расчете необходимо использовать формулу:
-(выработка в часах*ставка в час) + премия. Для выполнения расчета для
-конкретных значений необходимо запускать скрипт с параметрами.
-"""
+from sys import argv
 
-def calculation_salary(hours, rate, premium = 0):
-    """
-    функция расчета заработной платы сотрудника
+script_name, hours, rate, premium = argv
 
-    """
-    return hours * rate + premium
-
-print(calculation_salary(hours=int(input("выработка в часах: ")),
-                        rate=int(input("ставка в час: ")),
-                        premium=int(input("премия: "))))
-                        
+print("Имя скрипта: ", script_name)
+print("Часы: ", hours)
+print("Ставка: ", rate)
+print("Премия: ", premium)
