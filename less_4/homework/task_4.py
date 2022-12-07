@@ -8,6 +8,7 @@
 """
 
 data = [2, 2, 2, 7, 23, 1, 44, 44, 3, 2, 10, 7, 4, 11]
-res = [el for i, el in enumerate(sorted(data)) if  ]
+
+res = [el for i, el in enumerate(sorted(data)) if i == 0 or el != sorted(data)[i - 1]]
 
 print(res)
