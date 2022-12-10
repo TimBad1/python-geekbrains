@@ -28,17 +28,3 @@ with open('file_4.txt', "r", encoding="utf-8") as read_file:
                 ) + '\n')
         print(new_content)
         write_file.writelines(new_content)
-
-
-# # new_content = [for line in content my_dict[item] if item in my_dict else item for item in line.split()]
-# # for line in content:
-#     # line = ''.join(str([my_dict[item] if item in my_dict else item for item in line.split()]))
-#     # for el in line:
-#     #     if el in my_dict:
-#     #         value = my_dict.get(el)
-#     #         el = value
-#     # line = ' '.join(line)
-#     # print(content)
-# new_file.writelines(content)
-# file.close()
-# new_file.close()
