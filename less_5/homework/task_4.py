@@ -28,3 +28,4 @@ with open('file_4.txt', "r", encoding="utf-8") as read_file:
                 ) + '\n')
         print(new_content)
         write_file.writelines(new_content)
+        
