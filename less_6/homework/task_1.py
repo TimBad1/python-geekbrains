@@ -1,21 +1,32 @@
-"""
-При сравнении разных методов подсчёта факториала самым быстрым оказался метод
-подключения математического модуля, затем, аж в 5 раз медленнее отработал цикл
-и самый медленный результат у рекурсии и метода reduce при чём
-с готовым массивом [1,2,3,4,5,6,7,8,9,10] работает в 2 раза дольше чем [i for i in range(1, 11)]
-"""
+'''Из ваших заданий в уроках 1-5 найти 2-3 скрипта, сделать замеры времени,
+оптимизировать, вновь выполнить замеры и подготовить аналитику, что вы сделали
+и чего удалось добиться'''
 
+from testing_scripts import update_rating, update_rating_2
+from testing_scripts import my_func_1, my_func_2, my_func_3
 from timeit import timeit
-from factorial import factorial_rec, factorial_cycle, factorial_math, factorial_lc
 
-print(timeit("factorial_rec(100)", setup="from __main__ import factorial_rec", number=100000))
-print(timeit("factorial_cycle(100)", setup="from __main__ import factorial_cycle", number=100000))
-print(timeit("factorial_math(100)", setup="from __main__ import factorial_math", number=100000))
-print(timeit("factorial_lc(100)", setup="from __main__ import factorial_lc", number=100000))
+# first competition
+rating_list = [7, 5, 3, 3, 2]
+rating_lst = [7, 5, 3, 3, 2]
+rating = 8
 
-"""
-4.791663457
-2.4407517799999994
-0.5167011119999998
-4.701772784
-"""
+rating_1 = timeit("update_rating(rating_list, rating)", globals=globals(),
+                  number=10000)
+rating_2 = timeit("update_rating_2(rating_lst, rating)", globals=globals(),
+                  number=10000)
+print(f'Rating_1 - {rating_1} seconds')
+print(f'Rating_2 - {rating_2} seconds')
+
+# second competition
+number_1, number_2 = 5, -3
+
+pow_1 = timeit("my_func_1(number_1, number_2)", globals=globals(),
+               number=100000)
+pow_2 = timeit("my_func_2(number_1, number_2)", globals=globals(),
+               number=100000)
+pow_3 = timeit("my_func_3(number_1, number_2)", globals=globals(),
+               number=100000)
+print(f'Pow_1 - {pow_1} seconds')
+print(f'Pow_2 - {pow_2} seconds')
+print(f'Pow_3 - {pow_3} seconds')
