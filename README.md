@@ -1,1 +1,1 @@
-# https://github.com/TimBad1/python-geekbrains/tree/main/less_6/homework
+# https://github.com/TimBad1/python-geekbrains/tree/main/less_7/homework
