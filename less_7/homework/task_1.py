@@ -23,13 +23,12 @@ class TrafficLight:
         """
         метод переключения сигналов светофора
         """
+        i = 0
         while True:
-            print(self.__color[0])
-            sleep(self.__delay[0])
-            print(self.__color[1])
-            sleep(self.__delay[1])
-            print(self.__color[2])
-            sleep(self.__delay[2])
+            i %= 3
+            print(self.__color[i])
+            sleep(self.__delay[i])
+            i += 1
 
 tr = TrafficLight()
 tr.running()
