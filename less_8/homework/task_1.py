@@ -27,6 +27,12 @@
 8 10 12
 14 16 18
 """
+import numpy as np
+
+class MyError(Exception):
+    """Выбрасывание исключения и текста исключения при ошибке"""
+    def __init__(self, text):
+        self.txt = text
 
 class Matrix:
     """class Matrix"""
@@ -37,19 +43,21 @@ class Matrix:
         return str('\n'.join(str(row) for row in self.list))
 
     def __add__(self, other):
+        if self.list.shape == other.list.shape:
+            return self.list + other.list
+        else:
+            raise MyError("Размеры матриц не совпадают")
 
-        # new_matrix = [[][]]
-        return (self.list[0],other.list[0])
-        # _new_matrix = []
-        # for i in len(self.list[0]):
-        #     for j in i:
-        #         _new_matrix[i][j] = int(self.list[i][j]) + int(other.list[i][j])
-        # return _new_matrix
+a1 = np.array([[3, 3, 3], [5, 5, 5]], int)
+a2 = np.array([[1, 1, 1], [2, 2, 2]], int)
+a3 = np.array([[4, 4, 4], [6, 6, 6], [8, 8, 8]], int)
+a4 = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]], int)
+a5 = np.array([[10, 20, 30], [40, 50, 60], [70, 80, 90]], int)
+a6 = np.array([[10, 20], [40, 50]], int)
 
-
-
-
-a = Matrix([[1,2,3],[4,5,6],[7,8,9]])
-b = Matrix([[10,20,30],[40,50,60],[70,80,90]])
-print(a + b)
+m1 = Matrix(a1)
+m2 = Matrix(a2)
+m3 = Matrix(a3)
+print(Matrix(a4) + Matrix(a4))
+# print(Matrix(a4))
 # print(b)
